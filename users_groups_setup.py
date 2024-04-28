@@ -4,7 +4,7 @@ import os
 class UserGroupSetup:
     def __init__(self, root_dir='/'):
         self.root_dir = root_dir
-        os.system('sudo groupadd mediacenter -g 13000')
+        os.system('sudo groupadd mediacenter -g 200')
 
     def create_config_dir(self, service_name):
         os.system(
@@ -15,7 +15,7 @@ class UserGroupSetup:
 
     def sonarr(self):
         os.system(
-            '/bin/bash -c "sudo useradd sonarr -u 13001'
+            '/bin/bash -c "sudo useradd sonarr -u 201'
             ' ; sudo mkdir -pv ' + self.root_dir + '/data/{media,usenet,torrents}/tv -m 775'
             ' ; sudo chown -R sonarr:mediacenter ' + self.root_dir + '/data/{media,usenet,torrents}/tv'
             ' ; sudo chown $(id -u):mediacenter ' + self.root_dir + '/data'
@@ -26,7 +26,7 @@ class UserGroupSetup:
 
     def radarr(self):
         os.system(
-            '/bin/bash -c "sudo useradd radarr -u 13002'
+            '/bin/bash -c "sudo useradd radarr -u 202'
             ' ; sudo mkdir -pv ' + self.root_dir + '/data/{media,usenet,torrents}/movies -m 775'
             ' ; sudo chown -R radarr:mediacenter ' + self.root_dir + '/data/{media,usenet,torrents}/movies'
             ' ; sudo chown $(id -u):mediacenter ' + self.root_dir + '/data'
@@ -36,13 +36,13 @@ class UserGroupSetup:
         os.system('sudo usermod -a -G mediacenter radarr')
 
     def bazarr(self):
-        os.system('/bin/bash -c "sudo useradd bazarr -u 13013"')
+        os.system('/bin/bash -c "sudo useradd bazarr -u 213"')
         self.create_config_dir('bazarr')
         os.system('sudo usermod -a -G mediacenter bazarr')
 
     def lidarr(self):
         os.system(
-            '/bin/bash -c "sudo useradd lidarr -u 13003'
+            '/bin/bash -c "sudo useradd lidarr -u 203'
             ' ; sudo mkdir -pv ' + self.root_dir + '/data/{media,usenet,torrents}/music -m 775'
             ' ; sudo chown -R lidarr:mediacenter ' + self.root_dir + '/data/{media,usenet,torrents}/music'
             ' ; sudo chown $(id -u):mediacenter ' + self.root_dir + '/data'
@@ -53,7 +53,7 @@ class UserGroupSetup:
 
     def readarr(self):
         os.system(
-            '/bin/bash -c "sudo useradd readarr -u 13004'
+            '/bin/bash -c "sudo useradd readarr -u 204'
             ' ; sudo mkdir -pv ' + self.root_dir + '/data/{media,usenet,torrents}/books -m 775'
             ' ; sudo chown -R readarr:mediacenter ' + self.root_dir + '/data/{media,usenet,torrents}/books'
             ' ; sudo chown $(id -u):mediacenter ' + self.root_dir + '/data'
@@ -64,7 +64,7 @@ class UserGroupSetup:
 
     def mylar3(self):
         os.system(
-            '/bin/bash -c "sudo useradd mylar -u 13005'
+            '/bin/bash -c "sudo useradd mylar -u 205'
             ' ; sudo mkdir -pv ' + self.root_dir + '/data/{media,usenet,torrents}/comics -m 775'
             ' ; sudo chown -R mylar:mediacenter ' + self.root_dir + '/data/{media,usenet,torrents}/comics'
             ' ; sudo chown $(id -u):mediacenter ' + self.root_dir + '/data'
@@ -75,7 +75,7 @@ class UserGroupSetup:
 
     def audiobookshelf(self):
         os.system(
-            '/bin/bash -c "sudo useradd audiobookshelf -u 13009'
+            '/bin/bash -c "sudo useradd audiobookshelf -u 209'
             ' ; sudo mkdir -pv ' + self.root_dir + '/data/{media,usenet,torrents}/audiobooks -m 775'
             ' ; sudo chown -R audiobookshelf:mediacenter ' + self.root_dir + '/data/{media,usenet,torrents}/audiobooks'
             ' ; sudo chown $(id -u):mediacenter ' + self.root_dir + '/data'
@@ -85,30 +85,30 @@ class UserGroupSetup:
         os.system('sudo usermod -a -G mediacenter audiobookshelf')
 
     def prowlarr(self):
-        os.system('sudo useradd prowlarr -u 13006')
+        os.system('sudo useradd prowlarr -u 206')
         self.create_config_dir('prowlarr')
         os.system('sudo usermod -a -G mediacenter prowlarr')
 
     def qbittorrent(self):
-        os.system('sudo useradd qbittorrent -u 13007')
+        os.system('sudo useradd qbittorrent -u 207')
         os.system('sudo usermod -a -G mediacenter qbittorrent')
 
     def overseerr(self):
-        os.system('sudo useradd overseerr -u 13009')
+        os.system('sudo useradd overseerr -u 209')
         self.create_config_dir('overseerr')
         os.system('sudo usermod -a -G mediacenter overseerr')
 
     def plex(self):
-        os.system('sudo useradd plex -u 13010')
+        os.system('sudo useradd plex -u 210')
         self.create_config_dir('plex')
         os.system('sudo usermod -a -G mediacenter plex')
 
     def sabnzbd(self):
-        os.system('sudo useradd sabnzbd -u 13011')
+        os.system('sudo useradd sabnzbd -u 211')
         self.create_config_dir('sabnzbd')
         os.system('sudo usermod -a -G mediacenter sabnzbd')
 
     def jellyseerr(self):
-        os.system('sudo useradd jellyseerr -u 13012')
+        os.system('sudo useradd jellyseerr -u 212')
         self.create_config_dir('jellyseerr')
         os.system('sudo usermod -a -G mediacenter jellyseerr')

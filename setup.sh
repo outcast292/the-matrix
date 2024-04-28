@@ -1,20 +1,20 @@
 #!/bin/bash
 
 # Make users and group
-sudo useradd sonarr -u 13001
-sudo useradd radarr -u 13002
-sudo useradd lidarr -u 13003
-sudo useradd readarr -u 13004
-sudo useradd mylar -u 13005
-sudo useradd prowlarr -u 13006
-sudo useradd qbittorrent -u 13007
-sudo useradd jackett -u 13008
-sudo useradd overseerr -u 13009
-sudo useradd plex -u 13010
-sudo useradd sabnzbd -u 13011
-sudo useradd jellyseerr -u 13012
-sudo useradd bazarr -u 13013
-sudo groupadd mediacenter -g 13000
+sudo useradd sonarr -u 201
+sudo useradd radarr -u 202
+sudo useradd lidarr -u 203
+sudo useradd readarr -u 204
+sudo useradd mylar -u 205
+sudo useradd prowlarr -u 206
+sudo useradd qbittorrent -u 207
+sudo useradd jackett -u 208
+sudo useradd overseerr -u 209
+sudo useradd plex -u 210
+sudo useradd sabnzbd -u 211
+sudo useradd jellyseerr -u 212
+sudo useradd bazarr -u 213
+sudo groupadd mediacenter -g 200
 sudo usermod -a -G mediacenter sonarr
 sudo usermod -a -G mediacenter radarr
 sudo usermod -a -G mediacenter lidarr
