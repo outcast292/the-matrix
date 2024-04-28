@@ -8,7 +8,7 @@ services:
       - PUID=201
       - PGID=200
       - UMASK=002
-      - TZ=Europe/Amsterdam
+      - TZ=Africa/Casablanca
     volumes:
       - /media/backupDrive/media-lib/config/sonarr-config:/config
       - /media/backupDrive/media-lib/data:/data
@@ -23,7 +23,7 @@ services:
       - PUID=202
       - PGID=200
       - UMASK=002
-      - TZ=Europe/Amsterdam
+      - TZ=Africa/Casablanca
     volumes:
       - /media/backupDrive/media-lib/config/radarr-config:/config
       - /media/backupDrive/media-lib/data:/data
@@ -38,7 +38,7 @@ services:
       - PUID=203
       - PGID=200
       - UMASK=002
-      - TZ=Europe/Amsterdam
+      - TZ=Africa/Casablanca
     volumes:
       - /media/backupDrive/media-lib/config/lidarr-config:/config
       - /media/backupDrive/media-lib/data:/data
@@ -53,7 +53,7 @@ services:
       - PUID=204
       - PGID=200
       - UMASK=002
-      - TZ=Europe/Amsterdam
+      - TZ=Africa/Casablanca
     volumes:
       - /media/backupDrive/media-lib/config/readarr-config:/config
       - /media/backupDrive/media-lib/data:/data
@@ -82,7 +82,7 @@ services:
     environment:
       - PUID=213
       - PGID=200
-      - TZ=Europe/Amsterdam
+      - TZ=Africa/Casablanca
     volumes:
       - /media/backupDrive/media-lib/config/bazarr-config:/config
       - /media/backupDrive/media-lib/data/media:/media
@@ -97,7 +97,7 @@ services:
       - PUID=212
       - PGID=200
       - UMASK=002
-      - TZ=Europe/Amsterdam
+      - TZ=Africa/Casablanca
     volumes:
       - /media/backupDrive/media-lib/config/jellyseerr-config:/app/config
     ports:
@@ -111,7 +111,7 @@ services:
       - PUID=206
       - PGID=200
       - UMASK=002
-      - TZ=Europe/Amsterdam
+      - TZ=Africa/Casablanca
     volumes:
       - /media/backupDrive/media-lib/config/prowlarr-config:/config
     ports:
@@ -125,7 +125,7 @@ services:
       - PUID=${UID}
       - PGID=200
       - UMASK=002
-      - TZ=Europe/Amsterdam
+      - TZ=Africa/Casablanca
     volumes:
       - /media/backupDrive/media-lib/config/jellyfin-config:/config
       - /media/backupDrive/media-lib/data/media:/data
@@ -140,7 +140,7 @@ services:
       - PUID=207
       - PGID=200
       - UMASK=002
-      - TZ=Europe/Amsterdam
+      - TZ=Africa/Casablanca
       - WEBUI_PORT=8080
     volumes:
       - /media/backupDrive/media-lib/config/qbittorrent-config:/config
