@@ -10,8 +10,8 @@ services:
       - UMASK=002
       - TZ=${TIMEZONE:-Africa/Casablanca}
     volumes:
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/config/sonarr-config:/config
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/data:/data
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/sonarr-config:/config
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/data:/data
     ports:
       - "8989:8989"
     restart: unless-stopped
@@ -25,8 +25,8 @@ services:
       - UMASK=002
       - TZ=${TIMEZONE:-Africa/Casablanca}
     volumes:
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/config/radarr-config:/config
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/data:/data
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/radarr-config:/config
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/data:/data
     ports:
       - "7878:7878"
     restart: unless-stopped
@@ -40,8 +40,8 @@ services:
       - UMASK=002
       - TZ=${TIMEZONE:-Africa/Casablanca}
     volumes:
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/config/lidarr-config:/config
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/data:/data
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/lidarr-config:/config
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/data:/data
     ports:
       - "8686:8686"
     restart: unless-stopped
@@ -55,8 +55,8 @@ services:
       - UMASK=002
       - TZ=${TIMEZONE:-Africa/Casablanca}
     volumes:
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/config/readarr-config:/config
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/data:/data
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/readarr-config:/config
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/data:/data
     ports:
       - "8787:8787"
     restart: unless-stopped
@@ -68,10 +68,10 @@ services:
       - AUDIOBOOKSHELF_UID=209
       - AUDIOBOOKSHELF_GID=200
     volumes:
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/config/audiobookshelf:/config
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/data/audiobooks:/audiobooks
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/data/podcasts:/podcasts
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/data/metadata:/metadata
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/audiobookshelf:/config
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/data/audiobooks:/audiobooks
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/data/podcasts:/podcasts
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/data/metadata:/metadata
     ports:
       - "13378:80"
     restart: unless-stopped
@@ -84,8 +84,8 @@ services:
       - PGID=200
       - TZ=${TIMEZONE:-Africa/Casablanca}
     volumes:
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/config/bazarr-config:/config
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/data/media:/media
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/bazarr-config:/config
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/data/media:/media
     ports:
       - "6767:6767"
     restart: unless-stopped
@@ -99,7 +99,7 @@ services:
       - UMASK=002
       - TZ=${TIMEZONE:-Africa/Casablanca}
     volumes:
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/config/jellyseerr-config:/app/config
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/jellyseerr-config:/app/config
     ports:
       - "5056:5055"
     restart: unless-stopped
@@ -113,7 +113,7 @@ services:
       - UMASK=002
       - TZ=${TIMEZONE:-Africa/Casablanca}
     volumes:
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/config/prowlarr-config:/config
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/prowlarr-config:/config
     ports:
       - "9696:9696"
     restart: unless-stopped
@@ -127,8 +127,8 @@ services:
       - UMASK=002
       - TZ=${TIMEZONE:-Africa/Casablanca}
     volumes:
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/config/jellyfin-config:/config
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/data/media:/data
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/jellyfin-config:/config
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/data/media:/data
     ports:
       - "8096:8096"
     restart: unless-stopped
@@ -143,8 +143,8 @@ services:
       - TZ=${TIMEZONE:-Africa/Casablanca}
       - WEBUI_PORT=8080
     volumes:
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/config/qbittorrent-config:/config
-      - ${$MEDIA_VAULT_PATH:-'/media/backupDrive/media-lib'}/data/torrents:/data/torrents
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/qbittorrent-config:/config
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/data/torrents:/data/torrents
     ports:
       - "8080:8080"
       - "6881:6881"
