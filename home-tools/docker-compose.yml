@@ -14,8 +14,8 @@ services:
       - 853:853/tcp
       - 3000:3000/tcp
     volumes:
-      - ./adguard/work:/opt/adguardhome/work
-      - ./adguard/conf:/opt/adguardhome/conf
+      - ${ADGUARD_HOME}/work:/opt/adguardhome/work
+      - ${ADGUARD_HOME}/conf:/opt/adguardhome/conf
     environment:
       TZ: Africa/Casablanca
     restart: unless-stopped
