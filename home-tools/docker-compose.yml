@@ -1,21 +1,23 @@
----
-version: "3"
+version: "3" 
 services:
   watchtower:
     image: containrrr/watchtower
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock # Mount Docker socket to allow Watchtower to monitor containers
+
   adguardhome:
     image: adguard/adguardhome
-    ports:
-      - 35:53/tcp
-      - 35:53/udp
-      - 784:784/udp
-      - 853:853/tcp
-      - 3000:3000/tcp
     volumes:
       - ${ADGUARD_HOME}/work:/opt/adguardhome/work
       - ${ADGUARD_HOME}/conf:/opt/adguardhome/conf
     environment:
       TZ: Africa/Casablanca
+    ports:
+      - 3000:3000
+      - 53:53/udp
+      - 53:53/tcp
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1
     restart: unless-stopped
+
