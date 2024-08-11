@@ -16,10 +16,6 @@ services:
       - 3000:3000
       - 53:53/udp
       - 53:53/tcp
-    networks:
-      - host
+    network_mode: host
     restart: unless-stopped
-
-networks:
-  host:
-    external: true
+    
