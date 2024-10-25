@@ -98,10 +98,13 @@ services:
       - PGID=200
       - UMASK=002
       - TZ=${TIMEZONE:-Africa/Casablanca}
+      - forceIpv4First=true
     volumes:
       - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/jellyseerr-config:/app/config
     ports:
       - "5056:5055"
+    dns:
+      - 8.8.8.8
     restart: unless-stopped
 
   prowlarr:
