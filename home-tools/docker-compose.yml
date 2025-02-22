@@ -1,10 +1,30 @@
 version: "3" 
 services:
-  watchtower:
-    image: containrrr/watchtower
+  diun:
+    image: crazymax/diun:latest
+    command: serve
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock # Mount Docker socket to allow Watchtower to monitor containers
+      - "./data:/data"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    environment:
+      - "TZ=Europe/Paris"
+      - "DIUN_WATCH_WORKERS=20"
+      - "DIUN_WATCH_SCHEDULE=0 */6 * * *"
+      - "DIUN_WATCH_JITTER=30s"
+      - "DIUN_PROVIDERS_DOCKER=true"
+    labels:
+      - "diun.enable=true"
+    restart: always
 
+  noip-duc:
+    image: ghcr.io/noipcom/noip-duc:latest
+    container_name: noip-duc
+    restart: unless-stopped
+    environment:
+      - NOIP_USERNAME: ${NOIP_USERNAME}
+      - NOIP_PASSWORD: ${NOIP_PASSWORD}
+      - NOIP_HOSTNAMES: ${NOIP_HOSTNAMES}
+    
   adguardhome:
     image: adguard/adguardhome
     volumes:
