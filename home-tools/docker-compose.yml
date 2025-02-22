@@ -21,9 +21,9 @@ services:
     container_name: noip-duc
     restart: unless-stopped
     environment:
-      - NOIP_USERNAME: ${NOIP_USERNAME}
-      - NOIP_PASSWORD: ${NOIP_PASSWORD}
-      - NOIP_HOSTNAMES: ${NOIP_HOSTNAMES}
+      NOIP_USERNAME: ${NOIP_USERNAME}
+      NOIP_PASSWORD: ${NOIP_PASSWORD}
+      NOIP_HOSTNAMES: ${NOIP_HOSTNAMES}
     
   adguardhome:
     image: adguard/adguardhome
