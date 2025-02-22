@@ -4,7 +4,6 @@ services:
     image: crazymax/diun:latest
     command: serve
     volumes:
-      - "./data:/data"
       - "/var/run/docker.sock:/var/run/docker.sock"
     environment:
       - "TZ=Europe/Paris"
