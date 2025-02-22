@@ -17,7 +17,7 @@ services:
     restart: always
 
   noip-duc:
-    image: ghcr.io/noipcom/noip-duc:latest
+    image: noipcom/noip-duc:latest
     container_name: noip-duc
     restart: unless-stopped
     environment:
