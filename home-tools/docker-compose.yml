@@ -1,19 +1,16 @@
 version: "3" 
 services:
-  diun:
-    image: crazymax/diun:latest
-    command: serve
+  whatsupdocker:
+    image: getwud/wud
+    container_name: wud
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    environment:
-      - "TZ=Europe/Paris"
-      - "DIUN_WATCH_WORKERS=20"
-      - "DIUN_WATCH_SCHEDULE=0 */6 * * *"
-      - "DIUN_WATCH_JITTER=30s"
-      - "DIUN_PROVIDERS_DOCKER=true"
-    labels:
-      - "diun.enable=true"
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 3000:3000
     restart: always
+    environment:
+      TZ: "Europe/Paris"
+
 
   noip-duc:
     image: noipcom/noip-duc:latest
