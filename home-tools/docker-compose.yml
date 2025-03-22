@@ -12,6 +12,9 @@ services:
     environment:
       TZ: "Europe/Paris"
       WUD_WATCHER_LOCAL_CRON: "0 1 * * *" # everyday at 1 am
+      WUD_TRIGGER_TELEGRAM_1_BOTTOKEN: ${TELEGRAM_TOKEN}
+      WUD_TRIGGER_TELEGRAM_1_CHATID: ${TELEGRAM_CHAT_ID}
+      WUD_TRIGGER_DOCKER_localdocker_PRUNE: true
 
 
   noip-duc:
