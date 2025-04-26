@@ -136,6 +136,26 @@ services:
       - "8096:8096"
     restart: unless-stopped
 
+
+  maintainerr:
+    image: jorenn92/maintainerr:latest
+    container_name: maintainerr
+    user: 214:200
+    volumes:
+      - type: bind
+        source: ./data
+        target: /opt/data
+      - ${MEDIA_VAULT_PATH:-/media/backupDrive/media-lib}/config/maintainerr-config:/opt/data
+    environment:
+      - TZ=${TIMEZONE:-Africa/Casablanca}
+#      - BASE_PATH=/maintainerr # uncomment if you're serving maintainerr from a subdirectory
+#      - UI_HOSTNAME=:: # uncomment if you want to listen on IPv6 instead (default 0.0.0.0)
+#      - UI_PORT=6247 # uncomment to change the UI port (default 6246). Useful if you're on a network where the port is already in use
+#      - API_PORT=3002 # uncomment to change the API port (default 3001). Useful if you're on a network where the port is already in use
+    ports:
+      - 6246:6246
+    restart: unless-stopped
+
   qbittorrent:
     image: linuxserver/qbittorrent:latest
     container_name: qbittorrent
