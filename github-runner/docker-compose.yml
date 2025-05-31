@@ -1,12 +1,14 @@
 version: "3"
 
 services:
-  github-runner:
+  org-github-runner:
     image: myoung34/github-runner:latest
-    container_name: github-runner
+    container_name: org-github-runner
     restart: always
     environment:
-      REPO_URL: ${REPO_URL}
+      ORG_NAME: ${ORG_NAME}
+      ACCESS_TOKEN: ${ACCESS_TOKEN}  # Optional for managing via API
+      RUNNER_SCOPE: org
       RUNNER_TOKEN: ${RUNNER_TOKEN}
       RUNNER_NAME: ${RUNNER_NAME}
       RUNNER_LABELS: ${RUNNER_LABELS}
